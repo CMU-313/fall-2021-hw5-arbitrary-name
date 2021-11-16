@@ -17,6 +17,8 @@ jobs:
       run: sudo apt-get update
     - name: Install scanimage
       run: sudo apt-get install sane-utils
+    - name: Install libreoffice
+      run: sudo apt install libreoffice
     - uses: actions/checkout@v2
     - name: Setup requirements
       run: make setup-dev-environment
