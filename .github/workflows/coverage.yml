@@ -17,12 +17,12 @@ jobs:
       run: sudo apt-get update
     - name: Install scanimage
       run: sudo apt-get install sane-utils
-    #- uses: actions/checkout@v2
-    #- name: Setup requirements
-      #run: make setup-dev-environment
-    #- name: Initial setup
-      #run: ./manage.py initialsetup
-    #- name: Run tests with coverage
-      #run: make coverage-run
-    #- name: Generate coverage report
-      #run: coverage report
+    - uses: actions/checkout@v2
+    - name: Setup requirements
+      run: make setup-dev-environment
+    - name: Initial setup
+      run: ./manage.py initialsetup
+    - name: Run tests with coverage
+      run: make coverage-run
+    - name: Generate coverage report
+      run: coverage report
