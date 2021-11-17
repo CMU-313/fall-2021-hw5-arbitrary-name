@@ -1,0 +1,1632 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+    Bandit Report
+</title>
+
+<style>
+
+html * {
+    font-family: "Arial", sans-serif;
+}
+
+pre {
+    font-family: "Monaco", monospace;
+}
+
+.bordered-box {
+    border: 1px solid black;
+    padding-top:.5em;
+    padding-bottom:.5em;
+    padding-left:1em;
+}
+
+.metrics-box {
+    font-size: 1.1em;
+    line-height: 130%;
+}
+
+.metrics-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: .25em;
+}
+
+.issue-description {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.candidate-issues {
+    margin-left: 2em;
+    border-left: solid 1px; LightGray;
+    padding-left: 5%;
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+.issue-block {
+    border: 1px solid LightGray;
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+.issue-sev-high {
+    background-color: Pink;
+}
+
+.issue-sev-medium {
+    background-color: NavajoWhite;
+}
+
+.issue-sev-low {
+    background-color: LightCyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="metrics">
+    <div class="metrics-box bordered-box">
+        <div class="metrics-title">
+            Metrics:<br>
+        </div>
+        Total lines of code: <span id="loc">132530</span><br>
+        Total lines skipped (#nosec): <span id="nosec">0</span>
+    </div>
+</div>
+
+
+
+
+<br>
+<div id="results">
+    
+<div id="issue-0">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/appearance/templatetags/appearance_tags.py" target="_blank">../mayan/apps/appearance/templatetags/appearance_tags.py</a> <br>
+    <b>Line number: </b>53<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+52	
+53	    return mark_safe(&#x27; &#x27;.join(result))
+54	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-1">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/appearance/templatetags/appearance_tags.py" target="_blank">../mayan/apps/appearance/templatetags/appearance_tags.py</a> <br>
+    <b>Line number: </b>53<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+52	
+53	    return mark_safe(&#x27; &#x27;.join(result))
+54	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-2">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'new_password_123'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/authentication/tests/test_views.py" target="_blank">../mayan/apps/authentication/tests/test_views.py</a> <br>
+    <b>Line number: </b>38<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+37	    def test_current_user_set_password_view(self):
+38	        new_password = &#x27;new_password_123&#x27;
+39	
+40	        self._clear_events()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-3">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'new_password_123'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/authentication/tests/test_views.py" target="_blank">../mayan/apps/authentication/tests/test_views.py</a> <br>
+    <b>Line number: </b>637<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+636	
+637	        new_password = &#x27;new_password_123&#x27;
+638	
+639	        events = self._get_test_events()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-4">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test admin user password'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/autoadmin/tests/literals.py" target="_blank">../mayan/apps/autoadmin/tests/literals.py</a> <br>
+    <b>Line number: </b>2<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+1	TEST_ADMIN_USER_EMAIL = &#x27;testemail@example.com&#x27;
+2	TEST_ADMIN_USER_PASSWORD = &#x27;test admin user password&#x27;
+3	TEST_ADMIN_USER_USERNAME = &#x27;test_admin_user_username&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-5">
+<div class="issue-block issue-sev-medium">
+    <b>yaml_load: </b> Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().<br>
+    <b>Test ID:</b> B506<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/common/serialization.py" target="_blank">../mayan/apps/common/serialization.py</a> <br>
+    <b>Line number: </b>20<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b506_yaml_load.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b506_yaml_load.html</a><br>
+
+<div class="code">
+<pre>
+19	
+20	    return yaml.load(*args, **defaults)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-6">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/common/validators.py" target="_blank">../mayan/apps/common/validators.py</a> <br>
+    <b>Line number: </b>25<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+24	        else:
+25	            assert not flags, &#x27;flags must be empty if regex is passed pre-compiled&#x27;
+26	            return regex
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-7">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'BAD_PASSPHRASE'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/django_gpg/literals.py" target="_blank">../mayan/apps/django_gpg/literals.py</a> <br>
+    <b>Line number: </b>18<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+17	
+18	ERROR_MSG_BAD_PASSPHRASE = &#x27;BAD_PASSPHRASE&#x27;
+19	ERROR_MSG_GOOD_PASSPHRASE = &#x27;GOOD_PASSPHRASE&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-8">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'GOOD_PASSPHRASE'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/django_gpg/literals.py" target="_blank">../mayan/apps/django_gpg/literals.py</a> <br>
+    <b>Line number: </b>19<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+18	ERROR_MSG_BAD_PASSPHRASE = &#x27;BAD_PASSPHRASE&#x27;
+19	ERROR_MSG_GOOD_PASSPHRASE = &#x27;GOOD_PASSPHRASE&#x27;
+20	ERROR_MSG_MISSING_PASSPHRASE = &#x27;MISSING_PASSPHRASE&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-9">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'MISSING_PASSPHRASE'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/django_gpg/literals.py" target="_blank">../mayan/apps/django_gpg/literals.py</a> <br>
+    <b>Line number: </b>20<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+19	ERROR_MSG_GOOD_PASSPHRASE = &#x27;GOOD_PASSPHRASE&#x27;
+20	ERROR_MSG_MISSING_PASSPHRASE = &#x27;MISSING_PASSPHRASE&#x27;
+21	
+22	KEY_TYPES = {
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-10">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'sec'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/django_gpg/literals.py" target="_blank">../mayan/apps/django_gpg/literals.py</a> <br>
+    <b>Line number: </b>28<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+27	KEY_TYPE_PUBLIC = &#x27;pub&#x27;
+28	KEY_TYPE_SECRET = &#x27;sec&#x27;
+29	
+30	KEY_TYPE_CHOICES = (
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-11">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'testpassphrase'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/django_gpg/tests/literals.py" target="_blank">../mayan/apps/django_gpg/tests/literals.py</a> <br>
+    <b>Line number: </b>89<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+88	TEST_KEY_PRIVATE_FINGERPRINT = &#x27;6A24574E0A35004CDDFD22704125E9C571F378AC&#x27;
+89	TEST_KEY_PRIVATE_PASSPHRASE = &#x27;testpassphrase&#x27;
+90	
+91	TEST_KEY_PUBLIC_FILE_PATH = os.path.join(
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-12">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_funcarg: </b> Possible hardcoded password: 'bad passphrase'<br>
+    <b>Test ID:</b> B106<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/django_gpg/tests/test_models.py" target="_blank">../mayan/apps/django_gpg/tests/test_models.py</a> <br>
+    <b>Line number: </b>151<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html</a><br>
+
+<div class="code">
+<pre>
+150	            with open(file=TEST_FILE, mode=&#x27;rb&#x27;) as test_file:
+151	                key.sign_file(
+152	                    file_object=test_file, detached=True,
+153	                    passphrase=&#x27;bad passphrase&#x27;
+154	                )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-13">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/document_parsing/forms.py" target="_blank">../mayan/apps/document_parsing/forms.py</a> <br>
+    <b>Line number: </b>42<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+41	
+42	        self.fields[&#x27;contents&#x27;].initial = mark_safe(&#x27;&#x27;.join(content))
+43	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-14">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/document_parsing/forms.py" target="_blank">../mayan/apps/document_parsing/forms.py</a> <br>
+    <b>Line number: </b>42<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+41	
+42	        self.fields[&#x27;contents&#x27;].initial = mark_safe(&#x27;&#x27;.join(content))
+43	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-15">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/document_parsing/forms.py" target="_blank">../mayan/apps/document_parsing/forms.py</a> <br>
+    <b>Line number: </b>79<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+78	
+79	        self.fields[&#x27;contents&#x27;].initial = mark_safe(content)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-16">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/document_parsing/forms.py" target="_blank">../mayan/apps/document_parsing/forms.py</a> <br>
+    <b>Line number: </b>79<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+78	
+79	        self.fields[&#x27;contents&#x27;].initial = mark_safe(content)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-17">
+<div class="issue-block issue-sev-low">
+    <b>blacklist: </b> Consider possible security implications associated with the subprocess module.<br>
+    <b>Test ID:</b> B404<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/document_parsing/parsers.py" target="_blank">../mayan/apps/document_parsing/parsers.py</a> <br>
+    <b>Line number: </b>4<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b404-import-subprocess" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b404-import-subprocess</a><br>
+
+<div class="code">
+<pre>
+3	from shutil import copyfileobj
+4	import subprocess
+5	
+6	from django.apps import apps
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-18">
+<div class="issue-block issue-sev-low">
+    <b>subprocess_without_shell_equals_true: </b> subprocess call - check for execution of untrusted input.<br>
+    <b>Test ID:</b> B603<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/document_parsing/parsers.py" target="_blank">../mayan/apps/document_parsing/parsers.py</a> <br>
+    <b>Line number: </b>139<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html</a><br>
+
+<div class="code">
+<pre>
+138	
+139	        proc = subprocess.Popen(
+140	            command, close_fds=True, stderr=subprocess.PIPE,
+141	            stdout=subprocess.PIPE
+142	        )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-19">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'testpassword'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/document_states/tests/literals.py" target="_blank">../mayan/apps/document_states/tests/literals.py</a> <br>
+    <b>Line number: </b>36<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+35	TEST_SERVER_USERNAME = &#x27;testusername&#x27;
+36	TEST_SERVER_PASSWORD = &#x27;testpassword&#x27;
+37	
+38	TEST_WORKFLOW_INSTANCE_LOG_ENTRY_COMMENT = &#x27;test workflow instance log entry comment&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-20">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/documents/html_widgets.py" target="_blank">../mayan/apps/documents/html_widgets.py</a> <br>
+    <b>Line number: </b>28<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+27	def document_link(document):
+28	    return mark_safe(&#x27;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&#x27; % (
+29	        document.get_absolute_url(), document)
+30	    )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-21">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/documents/html_widgets.py" target="_blank">../mayan/apps/documents/html_widgets.py</a> <br>
+    <b>Line number: </b>28<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+27	def document_link(document):
+28	    return mark_safe(&#x27;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&#x27; % (
+29	        document.get_absolute_url(), document)
+30	    )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-22">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/documents/migrations/0063_auto_20201012_0320.py" target="_blank">../mayan/apps/documents/migrations/0063_auto_20201012_0320.py</a> <br>
+    <b>Line number: </b>29<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+28	    ) ORDER BY {documents_documentfilepage}.{id} ASC
+29	    &#x27;&#x27;&#x27;.format(
+30	        documents_documentfile=schema_editor.connection.ops.quote_name(&#x27;documents_documentfile&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-23">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/documents/migrations/0067_auto_20201024_1120.py" target="_blank">../mayan/apps/documents/migrations/0067_auto_20201024_1120.py</a> <br>
+    <b>Line number: </b>10<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+9	        UPDATE {documents_documentfile} SET {filename} = %s WHERE {documents_documentfile}.{id} = %s;
+10	    &#x27;&#x27;&#x27;.format(
+11	        documents_documentfile=schema_editor.connection.ops.quote_name(&#x27;documents_documentfile&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-24">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/documents/migrations/0067_auto_20201024_1120.py" target="_blank">../mayan/apps/documents/migrations/0067_auto_20201024_1120.py</a> <br>
+    <b>Line number: </b>24<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+23	        )
+24	    &#x27;&#x27;&#x27;.format(
+25	        document_id=schema_editor.connection.ops.quote_name(&#x27;document_id&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-25">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>23<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+22	        ORDER BY {documents_duplicateddocumentold}.{document_id} ASC
+23	    &#x27;&#x27;&#x27;.format(
+24	        documents_duplicateddocumentold=schema_editor.connection.ops.quote_name(&#x27;documents_duplicateddocumentold&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-26">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>48<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+47	            {duplicates_duplicateddocument}.{document_id} = %s;
+48	    &#x27;&#x27;&#x27;.format(
+49	        document_id=schema_editor.connection.ops.quote_name(&#x27;document_id&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-27">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>86<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+85	        DELETE FROM {documents_duplicateddocumentold_documents};
+86	    &#x27;&#x27;&#x27;.format(
+87	        documents_duplicateddocumentold_documents=schema_editor.connection.ops.quote_name(&#x27;documents_duplicateddocumentold_documents&#x27;)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-28">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>93<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+92	        DELETE FROM {documents_duplicateddocumentold};
+93	    &#x27;&#x27;&#x27;.format(
+94	        documents_duplicateddocumentold=schema_editor.connection.ops.quote_name(&#x27;documents_duplicateddocumentold&#x27;)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-29">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>112<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+111	        FROM {duplicates_duplicateddocument}
+112	    &#x27;&#x27;&#x27;.format(
+113	        datetime_added=schema_editor.connection.ops.quote_name(&#x27;datetime_added&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-30">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>133<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+132	                {duplicates_duplicateddocument_documents}.{duplicateddocument_id} = %s
+133	        &#x27;&#x27;&#x27;.format(
+134	            document_id=schema_editor.connection.ops.quote_name(&#x27;document_id&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-31">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>161<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+160	        DELETE FROM {duplicates_duplicateddocument_documents};
+161	    &#x27;&#x27;&#x27;.format(
+162	        duplicates_duplicateddocument_documents=schema_editor.connection.ops.quote_name(&#x27;duplicates_duplicateddocument_documents&#x27;)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-32">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py" target="_blank">../mayan/apps/duplicates/migrations/0002_auto_20201130_0342.py</a> <br>
+    <b>Line number: </b>168<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+167	        DELETE FROM {duplicates_duplicateddocument};
+168	    &#x27;&#x27;&#x27;.format(
+169	        duplicates_duplicateddocument=schema_editor.connection.ops.quote_name(&#x27;duplicates_duplicateddocument&#x27;)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-33">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/events/html_widgets.py" target="_blank">../mayan/apps/events/html_widgets.py</a> <br>
+    <b>Line number: </b>50<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+49	
+50	    return mark_safe(
+51	        &#x27;&lt;a href=&quot;%(url)s&quot;&gt;%(label)s&lt;/a&gt;&#x27; % {
+52	            &#x27;url&#x27;: reverse(viewname=&#x27;events:events_by_verb&#x27;, kwargs={&#x27;verb&#x27;: entry.verb}),
+53	            &#x27;label&#x27;: EventType.get(name=entry.verb)
+54	        }
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-34">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/events/html_widgets.py" target="_blank">../mayan/apps/events/html_widgets.py</a> <br>
+    <b>Line number: </b>50<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+49	
+50	    return mark_safe(
+51	        &#x27;&lt;a href=&quot;%(url)s&quot;&gt;%(label)s&lt;/a&gt;&#x27; % {
+52	            &#x27;url&#x27;: reverse(viewname=&#x27;events:events_by_verb&#x27;, kwargs={&#x27;verb&#x27;: entry.verb}),
+53	            &#x27;label&#x27;: EventType.get(name=entry.verb)
+54	        }
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-35">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/file_caching/migrations/0005_auto_20200322_0607.py" target="_blank">../mayan/apps/file_caching/migrations/0005_auto_20200322_0607.py</a> <br>
+    <b>Line number: </b>86<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+85	        cursor_secondary.execute(
+86	            sql=&#x27;DELETE FROM {};&#x27;.format(
+87	                schema_editor.connection.ops.quote_name(
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-36">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/ocr/forms.py" target="_blank">../mayan/apps/ocr/forms.py</a> <br>
+    <b>Line number: </b>38<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+37	
+38	        self.fields[&#x27;contents&#x27;].initial = mark_safe(content)
+39	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-37">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/ocr/forms.py" target="_blank">../mayan/apps/ocr/forms.py</a> <br>
+    <b>Line number: </b>38<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+37	
+38	        self.fields[&#x27;contents&#x27;].initial = mark_safe(content)
+39	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-38">
+<div class="issue-block issue-sev-medium">
+    <b>django_mark_safe: </b> Potential XSS on mark_safe function.<br>
+    <b>Test ID:</b> B703<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/ocr/forms.py" target="_blank">../mayan/apps/ocr/forms.py</a> <br>
+    <b>Line number: </b>83<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b703_django_mark_safe.html</a><br>
+
+<div class="code">
+<pre>
+82	
+83	        self.fields[&#x27;contents&#x27;].initial = mark_safe(&#x27;&#x27;.join(content))
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-39">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/ocr/forms.py" target="_blank">../mayan/apps/ocr/forms.py</a> <br>
+    <b>Line number: </b>83<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+82	
+83	        self.fields[&#x27;contents&#x27;].initial = mark_safe(&#x27;&#x27;.join(content))
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-40">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/ocr/migrations/0009_auto_20210304_0950.py" target="_blank">../mayan/apps/ocr/migrations/0009_auto_20210304_0950.py</a> <br>
+    <b>Line number: </b>24<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+23	            )
+24	    &#x27;&#x27;&#x27;.format(
+25	        content=schema_editor.connection.ops.quote_name(&#x27;content&#x27;),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-41">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_sql_expressions: </b> Possible SQL injection vector through string-based query construction.<br>
+    <b>Test ID:</b> B608<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>File: </b><a href="../mayan/apps/ocr/migrations/0009_auto_20210304_0950.py" target="_blank">../mayan/apps/ocr/migrations/0009_auto_20210304_0950.py</a> <br>
+    <b>Line number: </b>39<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b608_hardcoded_sql_expressions.html</a><br>
+
+<div class="code">
+<pre>
+38	        ) VALUES {{}};
+39	    &#x27;&#x27;&#x27;.format(
+40	        ocr_documentversionpageocrcontent=schema_editor.connection.ops.quote_name(&#x27;ocr_documentversionpageocrcontent&#x27;)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-42">
+<div class="issue-block issue-sev-low">
+    <b>assert_used: </b> Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.<br>
+    <b>Test ID:</b> B101<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/rest_api/relations.py" target="_blank">../mayan/apps/rest_api/relations.py</a> <br>
+    <b>Line number: </b>45<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html</a><br>
+
+<div class="code">
+<pre>
+44	
+45	        assert &#x27;request&#x27; in self.context, (
+46	            &quot;`%s` requires the request in the serializer&quot;
+47	            &quot; context. Add `context={&#x27;request&#x27;: request}` when instantiating &quot;
+48	            &quot;the serializer.&quot; % self.__class__.__name__
+49	        )
+50	
+51	        request = self.context[&#x27;request&#x27;]
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-43">
+<div class="issue-block issue-sev-low">
+    <b>blacklist: </b> Consider possible security implications associated with the subprocess module.<br>
+    <b>Test ID:</b> B404<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/sources/models/scanner_sources.py" target="_blank">../mayan/apps/sources/models/scanner_sources.py</a> <br>
+    <b>Line number: </b>2<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b404-import-subprocess" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b404-import-subprocess</a><br>
+
+<div class="code">
+<pre>
+1	import logging
+2	import subprocess
+3	
+4	from django.db import models
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-44">
+<div class="issue-block issue-sev-low">
+    <b>subprocess_without_shell_equals_true: </b> subprocess call - check for execution of untrusted input.<br>
+    <b>Test ID:</b> B603<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/sources/models/scanner_sources.py" target="_blank">../mayan/apps/sources/models/scanner_sources.py</a> <br>
+    <b>Line number: </b>82<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b603_subprocess_without_shell_equals_true.html</a><br>
+
+<div class="code">
+<pre>
+81	                logger.debug(&#x27;Scan command line: %s&#x27;, command_line)
+82	                subprocess.check_call(
+83	                    command_line, stdout=stdout_file_object,
+84	                    stderr=stderr_file_object
+85	                )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-45">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_funcarg: </b> Possible hardcoded password: ''<br>
+    <b>Test ID:</b> B106<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/sources/tests/test_models.py" target="_blank">../mayan/apps/sources/tests/test_models.py</a> <br>
+    <b>Line number: </b>72<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html</a><br>
+
+<div class="code">
+<pre>
+71	    def _create_email_source(self):
+72	        self.source = EmailBaseModel(
+73	            document_type=self.test_document_type,
+74	            host=&#x27;&#x27;, username=&#x27;&#x27;, password=&#x27;&#x27;, store_body=True
+75	        )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-46">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_funcarg: </b> Possible hardcoded password: ''<br>
+    <b>Test ID:</b> B106<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/sources/tests/test_models.py" target="_blank">../mayan/apps/sources/tests/test_models.py</a> <br>
+    <b>Line number: </b>270<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html</a><br>
+
+<div class="code">
+<pre>
+269	        mock_imaplib.return_value = MockIMAPServer()
+270	        self.source = IMAPEmail.objects.create(
+271	            document_type=self.test_document_type, label=&#x27;&#x27;, host=&#x27;&#x27;,
+272	            password=&#x27;&#x27;, username=&#x27;&#x27;
+273	        )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-47">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_funcarg: </b> Possible hardcoded password: ''<br>
+    <b>Test ID:</b> B106<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/sources/tests/test_models.py" target="_blank">../mayan/apps/sources/tests/test_models.py</a> <br>
+    <b>Line number: </b>330<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html</a><br>
+
+<div class="code">
+<pre>
+329	        mock_poplib.return_value = MockPOP3Mailbox()
+330	        self.source = POP3Email.objects.create(
+331	            document_type=self.test_document_type, label=&#x27;&#x27;, host=&#x27;&#x27;,
+332	            password=&#x27;&#x27;, username=&#x27;&#x27;
+333	        )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-48">
+<div class="issue-block issue-sev-high">
+    <b>blacklist: </b> The pyCrypto library and its module AES are no longer actively maintained and have been deprecated. Consider using pyca/cryptography library.<br>
+    <b>Test ID:</b> B413<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/storage/backends/encryptedstorage.py" target="_blank">../mayan/apps/storage/backends/encryptedstorage.py</a> <br>
+    <b>Line number: </b>1<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto</a><br>
+
+<div class="code">
+<pre>
+1	from Crypto.Cipher import AES
+2	from Crypto.Hash import SHA256
+3	from Crypto.Protocol.KDF import PBKDF2
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-49">
+<div class="issue-block issue-sev-high">
+    <b>blacklist: </b> The pyCrypto library and its module SHA256 are no longer actively maintained and have been deprecated. Consider using pyca/cryptography library.<br>
+    <b>Test ID:</b> B413<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/storage/backends/encryptedstorage.py" target="_blank">../mayan/apps/storage/backends/encryptedstorage.py</a> <br>
+    <b>Line number: </b>2<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto</a><br>
+
+<div class="code">
+<pre>
+1	from Crypto.Cipher import AES
+2	from Crypto.Hash import SHA256
+3	from Crypto.Protocol.KDF import PBKDF2
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-50">
+<div class="issue-block issue-sev-high">
+    <b>blacklist: </b> The pyCrypto library and its module PBKDF2 are no longer actively maintained and have been deprecated. Consider using pyca/cryptography library.<br>
+    <b>Test ID:</b> B413<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/storage/backends/encryptedstorage.py" target="_blank">../mayan/apps/storage/backends/encryptedstorage.py</a> <br>
+    <b>Line number: </b>3<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto</a><br>
+
+<div class="code">
+<pre>
+2	from Crypto.Hash import SHA256
+3	from Crypto.Protocol.KDF import PBKDF2
+4	from Crypto.Util.Padding import pad, unpad
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-51">
+<div class="issue-block issue-sev-high">
+    <b>blacklist: </b> The pyCrypto library and its module pad are no longer actively maintained and have been deprecated. Consider using pyca/cryptography library.<br>
+    <b>Test ID:</b> B413<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/storage/backends/encryptedstorage.py" target="_blank">../mayan/apps/storage/backends/encryptedstorage.py</a> <br>
+    <b>Line number: </b>4<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_imports.html#b413-import-pycrypto</a><br>
+
+<div class="code">
+<pre>
+3	from Crypto.Protocol.KDF import PBKDF2
+4	from Crypto.Util.Padding import pad, unpad
+5	
+6	from django.conf import settings
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-52">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_funcarg: </b> Possible hardcoded password: 'testpassword'<br>
+    <b>Test ID:</b> B106<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/storage/tests/test_backends.py" target="_blank">../mayan/apps/storage/tests/test_backends.py</a> <br>
+    <b>Line number: </b>26<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html</a><br>
+
+<div class="code">
+<pre>
+25	    def test_file_save_and_load(self):
+26	        storage = EncryptedPassthroughStorage(
+27	            password=&#x27;testpassword&#x27;,
+28	            next_storage_backend_arguments={
+29	                &#x27;location&#x27;: self.temporary_directory,
+30	            }
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-53">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_funcarg: </b> Possible hardcoded password: 'testpassword'<br>
+    <b>Test ID:</b> B106<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/storage/tests/test_backends.py" target="_blank">../mayan/apps/storage/tests/test_backends.py</a> <br>
+    <b>Line number: </b>104<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b106_hardcoded_password_funcarg.html</a><br>
+
+<div class="code">
+<pre>
+103	    def test_file_save_and_load(self):
+104	        storage = EncryptedPassthroughStorage(
+105	            password=&#x27;testpassword&#x27;,
+106	            next_storage_backend=&#x27;mayan.apps.storage.backends.compressedstorage.ZipCompressedPassthroughStorage&#x27;,
+107	            next_storage_backend_arguments={
+108	                &#x27;next_storage_backend_arguments&#x27;: {
+109	                    &#x27;location&#x27;: self.temporary_directory,
+110	                }
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-54">
+<div class="issue-block issue-sev-low">
+    <b>blacklist: </b> Standard pseudo-random generators are not suitable for security/cryptographic purposes.<br>
+    <b>Test ID:</b> B311<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/testing/tests/mixins.py" target="_blank">../mayan/apps/testing/tests/mixins.py</a> <br>
+    <b>Line number: </b>260<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b311-random" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b311-random</a><br>
+
+<div class="code">
+<pre>
+259	        while True:
+260	            primary_key = random.randint(
+261	                RandomPrimaryKeyModelMonkeyPatchMixin.random_primary_key_random_floor,
+262	                RandomPrimaryKeyModelMonkeyPatchMixin.random_primary_key_random_ceiling
+263	            )
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-55">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test case superuser password'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/user_management/tests/literals.py" target="_blank">../mayan/apps/user_management/tests/literals.py</a> <br>
+    <b>Line number: </b>4<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+3	TEST_CASE_SUPERUSER_EMAIL = &#x27;test_case_superuser@example.com&#x27;
+4	TEST_CASE_SUPERUSER_PASSWORD = &#x27;test case superuser password&#x27;
+5	TEST_CASE_SUPERUSER_USERNAME = &#x27;test_case_superuser&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-56">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test case user password'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/user_management/tests/literals.py" target="_blank">../mayan/apps/user_management/tests/literals.py</a> <br>
+    <b>Line number: </b>8<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+7	TEST_CASE_USER_EMAIL = &#x27;test_case_user@example.com&#x27;
+8	TEST_CASE_USER_PASSWORD = &#x27;test case user password&#x27;
+9	TEST_CASE_USER_USERNAME = &#x27;test_case_user&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-57">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test user password'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/user_management/tests/literals.py" target="_blank">../mayan/apps/user_management/tests/literals.py</a> <br>
+    <b>Line number: </b>17<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+16	TEST_USER_EMAIL = &#x27;testuser@example.com&#x27;
+17	TEST_USER_PASSWORD = &#x27;test user password&#x27;
+18	TEST_USER_PASSWORD_EDITED = &#x27;test user password edited&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-58">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test user password edited'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/user_management/tests/literals.py" target="_blank">../mayan/apps/user_management/tests/literals.py</a> <br>
+    <b>Line number: </b>18<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+17	TEST_USER_PASSWORD = &#x27;test user password&#x27;
+18	TEST_USER_PASSWORD_EDITED = &#x27;test user password edited&#x27;
+19	TEST_USER_USERNAME = &#x27;test_user&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-59">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test user 2 password'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/user_management/tests/literals.py" target="_blank">../mayan/apps/user_management/tests/literals.py</a> <br>
+    <b>Line number: </b>23<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+22	TEST_USER_2_EMAIL = &#x27;testuser2@example.com&#x27;
+23	TEST_USER_2_PASSWORD = &#x27;test user 2 password&#x27;
+24	TEST_USER_2_PASSWORD_EDITED = &#x27;test user 2 password edited&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-60">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'test user 2 password edited'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/apps/user_management/tests/literals.py" target="_blank">../mayan/apps/user_management/tests/literals.py</a> <br>
+    <b>Line number: </b>24<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+23	TEST_USER_2_PASSWORD = &#x27;test user 2 password&#x27;
+24	TEST_USER_2_PASSWORD_EDITED = &#x27;test user 2 password edited&#x27;
+25	TEST_USER_2_USERNAME = &#x27;test_user_2&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-61">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of mark_safe() may expose cross-site scripting vulnerabilities and should be reviewed.<br>
+    <b>Test ID:</b> B308<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="../mayan/apps/views/widgets.py" target="_blank">../mayan/apps/views/widgets.py</a> <br>
+    <b>Line number: </b>123<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe" target="_blank">https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b308-mark-safe</a><br>
+
+<div class="code">
+<pre>
+122	    def render(self, name, value, attrs=None, renderer=None):
+123	        return mark_safe(s=&#x27;%s&#x27; % value)
+124	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-62">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'mayanuserpass'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/settings/literals.py" target="_blank">../mayan/settings/literals.py</a> <br>
+    <b>Line number: </b>6<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+5	DEFAULT_DATABASE_NAME = &#x27;mayan&#x27;
+6	DEFAULT_DATABASE_PASSWORD = &#x27;mayanuserpass&#x27;
+7	DEFAULT_DATABASE_USER = &#x27;mayan&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-63">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'mayanrabbitmqpassword'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/settings/literals.py" target="_blank">../mayan/settings/literals.py</a> <br>
+    <b>Line number: </b>10<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+9	DEFAULT_OS_USERNAME = &#x27;mayan&#x27;
+10	DEFAULT_RABBITMQ_PASSWORD = &#x27;mayanrabbitmqpassword&#x27;
+11	DEFAULT_RABBITMQ_USER = &#x27;mayan&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-64">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'mayanredispassword'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/settings/literals.py" target="_blank">../mayan/settings/literals.py</a> <br>
+    <b>Line number: </b>13<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+12	DEFAULT_RABBITMQ_VHOST = &#x27;mayan&#x27;
+13	DEFAULT_REDIS_PASSWORD = &#x27;mayanredispassword&#x27;
+14	DEFAULT_SECRET_KEY = &#x27;secret-key-missing!&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-65">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'secret-key-missing!'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/settings/literals.py" target="_blank">../mayan/settings/literals.py</a> <br>
+    <b>Line number: </b>14<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+13	DEFAULT_REDIS_PASSWORD = &#x27;mayanredispassword&#x27;
+14	DEFAULT_SECRET_KEY = &#x27;secret-key-missing!&#x27;
+15	DEFAULT_USER_SETTINGS_FOLDER = &#x27;user_settings&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-66">
+<div class="issue-block issue-sev-low">
+    <b>hardcoded_password_string: </b> Possible hardcoded password: 'SECRET_KEY'<br>
+    <b>Test ID:</b> B105<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/settings/literals.py" target="_blank">../mayan/settings/literals.py</a> <br>
+    <b>Line number: </b>43<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html</a><br>
+
+<div class="code">
+<pre>
+42	SOURCE_CODE_ISSUES = &#x27;https://gitlab.com/mayan-edms/mayan-edms/issues/&#x27;
+43	SECRET_KEY_FILENAME = &#x27;SECRET_KEY&#x27;
+44	SYSTEM_DIR = &#x27;system&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-67">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="../mayan/settings/testing/base.py" target="_blank">../mayan/settings/testing/base.py</a> <br>
+    <b>Line number: </b>15<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/latest/plugins/b108_hardcoded_tmp_directory.html" target="_blank">https://bandit.readthedocs.io/en/latest/plugins/b108_hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+14	
+15	LOGGING_LOG_FILE_PATH = &#x27;/tmp/mayan-errors.log&#x27;
+16	LOGGING_LEVEL = &#x27;WARNING&#x27;
+</pre>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
