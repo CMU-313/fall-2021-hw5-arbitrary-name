@@ -16,3 +16,5 @@ jobs:
       run: make docker-build
     - name: Run tests
       run: make docker-runtest-all
+    - name: Bandit Check
+      uses: jpetrucciani/bandit-check@1.6.2
