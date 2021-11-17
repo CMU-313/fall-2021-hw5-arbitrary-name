@@ -1,3 +1,4 @@
+[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Build](https://github.com/rohanpadhye/Mayan-EDMS/actions/workflows/build.yml/badge.svg)](https://github.com/rohanpadhye/Mayan-EDMS/actions/workflows/build.yml)
 [![pypi][pypi]][pypi-url]
 ![python][python]
